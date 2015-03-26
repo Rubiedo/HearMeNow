@@ -9,8 +9,8 @@
             <td colspan="4">{{bill.title}}</td>
         </tr>
         <tr class="bill-info" ng-show="bill.showInfo">
-            <td colspan="2">{{bill.sponsor.name}}</td>
-            <td colspan="2">{{bill.current_status_label}}</td>
+                <td colspan="2">{{bill.sponsor.firstname}} {{bill.sponsor.lastname}}</td>
+                <td colspan="2">{{bill.current_status_label}}</td>
         </tr>
         </tbody>
     </table>

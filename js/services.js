@@ -1,6 +1,23 @@
 //Services
 
-angular.module('hearmenow.service', []).
+angular.module('hearmenow.service', []).factory('sunLight', function($http){
+
+    var sunLight = {};
+
+    sunLight.getInfo = function(){
+
+        return $http({
+
+            method: 'JSONP',
+            url: 'https://congress.api.sunlightfoundation.com/bills/search?apikey=e48aa7cf09864232a1620c1a084dbe8c&&callback=JSON_CALLBACK'
+
+        });
+
+    }
+
+    return sunLight;
+
+}).
 
     factory('govTrackUs', function($http){
 

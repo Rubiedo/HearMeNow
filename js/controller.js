@@ -10,7 +10,7 @@ angular.module('hearmenow.controller', []).
 
             $scope.billsList = response.objects;
 
-        })
+        });
 
         $scope.click = function(bill){
 
@@ -20,7 +20,20 @@ angular.module('hearmenow.controller', []).
 
     }).
 
-    controller('homeController', function($scope){
+    controller('homeController', function($scope, sunLight){
 
+        $scope.sunlightList = [];
+
+        sunLight.getInfo().success(function(response){
+
+            $scope.sunlightList = response.results;
+
+        });
+
+        $scope.click = function(list){
+
+            return list.showInfo = ! list.showInfo;
+
+        }
 
     });

@@ -1,9 +1,18 @@
 <div class="row">
+    <table class="table table-striped">
+        <thead>
+        <tr><th colspan="4">Bills</th></tr>
+        </thead>
+        <tbody ng-repeat="list in sunlightList">
 
-<div ng-controller="billController">
-
-    Test Controller
-
-</div>
+        <tr ng-click="click(list)">
+            <td colspan="4">{{list.official_title}}</td>
+        </tr>
+        <tr class="bill-info" ng-show="list.showInfo">
+            <td colspan="2">{{list.sponsor.first_name}} {{list.sponsor.last_name}}</td>
+            <td colspan="2"><a ng-href="{{list.urls.congress}}">More info, click here</a></td>
+        </tr>
+        </tbody>
+    </table>
 
 </div>
