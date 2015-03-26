@@ -12,6 +12,12 @@ angular.module('hearmenow.controller', []).
 
         })
 
+        $scope.click = function(bill){
+
+            return bill.showInfo = ! bill.showInfo;
+
+        }
+
     }).
 
     controller('homeController', function($scope){

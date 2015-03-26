@@ -3,13 +3,14 @@
         <thead>
         <tr><th colspan="4">Bills</th></tr>
         </thead>
-        <tbody ng-repeat="bills in billsList">
-        <tr>
-            <td colspan="4">{{bills.title}}</td>
+        <tbody ng-repeat="bill in billsList">
+
+        <tr ng-click="click(bill)">
+            <td colspan="4">{{bill.title}}</td>
         </tr>
-        <tr>
-            <td colspan="2">{{bills.sponsor.name}}</td>
-            <td colspan="2">{{bills.current_status_label}}</td>
+        <tr class="bill-info" ng-show="bill.showInfo">
+            <td colspan="2">{{bill.sponsor.name}}</td>
+            <td colspan="2">{{bill.current_status_label}}</td>
         </tr>
         </tbody>
     </table>
