@@ -4,12 +4,17 @@ angular.module('hearmenow.controller', []).
 
     controller('billController', function($scope, govTrackUs){
 
-        $scope.bills = [];
+        $scope.billsList = [];
 
         govTrackUs.getBills().success(function(response){
 
-            $scope.bills = response.objects[0];
+            $scope.billsList = response.objects;
 
         })
+
+    }).
+
+    controller('homeController', function($scope){
+
 
     });

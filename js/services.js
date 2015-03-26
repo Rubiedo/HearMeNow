@@ -11,7 +11,7 @@ angular.module('hearmenow.service', []).
             return $http({
 
                 method: 'JSONP',
-                url: 'https://www.govtrack.us/api/v2/bill'
+                url: 'https://www.govtrack.us/api/v2/bill?congress=112&order_by=-current_status_date&format=jsonp&callback=JSON_CALLBACK'
 
             });
 
@@ -27,5 +27,7 @@ angular.module('hearmenow.service', []).
             });
 
         }
+
+        return bills;
 
     });

@@ -2,7 +2,7 @@
 
 angular.module('hearmenow', [
 
-    'hearmenow.services',
+    'hearmenow.service',
     'hearmenow.controller',
     'ngRoute'
 
@@ -10,11 +10,20 @@ angular.module('hearmenow', [
 
     $routeProvider.
 
+        when("/home", {
+
+            templateUrl: "views/home-view.html",
+            controller: "homeController"
+
+        }).
+
         when("/bills", {
 
             templateUrl: "views/bill-view.html",
             controller: "billController"
 
-        }). otherwise({redirectTo: "views/home-view.html"});
+        }).
+
+        otherwise({redirectTo: "/bills"});
 
 }]);
