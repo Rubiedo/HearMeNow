@@ -36,4 +36,6 @@ angular.module('hearmenow.controller', []).
 
         }
 
+        $scope.isCollapsed = true;
+
     });

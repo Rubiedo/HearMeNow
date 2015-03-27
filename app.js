@@ -4,7 +4,8 @@ angular.module('hearmenow', [
 
     'hearmenow.service',
     'hearmenow.controller',
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
 
 ]).config(['$routeProvider', function($routeProvider){
 

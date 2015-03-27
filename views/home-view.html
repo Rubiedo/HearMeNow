@@ -1,5 +1,21 @@
-<div class="row">
-    <table class="table table-striped">
+<div class="row home-view">
+    <div class="panel panel-default" ng-repeat="list in sunlightList">
+        <div class="panel-heading">
+            <h4 class="panel-title" ng-click="isCollapsed = !isCollapsed">
+                    {{list.official_title}}
+            </h4>
+        </div>
+        <div collapse="isCollapsed">
+            <div class="panel-body">{{list.sponsor.first_name}} {{list.sponsor.last_name}}
+                <a ng-href="{{list.urls.congress}}">More info, click here</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--    <table class="table table-striped">
         <thead>
         <tr><th colspan="4">Bills</th></tr>
         </thead>
@@ -13,6 +29,6 @@
             <td colspan="2"><a ng-href="{{list.urls.congress}}">More info, click here</a></td>
         </tr>
         </tbody>
-    </table>
+    </table> -->
 
 </div>
