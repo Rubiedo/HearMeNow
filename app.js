@@ -5,7 +5,7 @@ angular.module('hearmenow', [
     'hearmenow.service',
     'hearmenow.controller',
     'ngRoute',
-    'ui.bootstrap'
+    'ui.bootstrap',
 
 ]).config(['$routeProvider', function($routeProvider){
 
@@ -25,6 +25,6 @@ angular.module('hearmenow', [
 
         }).
 
-        otherwise({redirectTo: "/bills"});
+        otherwise({redirectTo: "/home"});
 
 }]);

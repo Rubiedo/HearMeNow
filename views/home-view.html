@@ -2,12 +2,12 @@
     <div class="panel panel-default" ng-repeat="list in sunlightList">
         <div class="panel-heading">
             <h4 class="panel-title" ng-click="isCollapsed = !isCollapsed">
-                    {{list.official_title}}
+                    Title: {{list.official_title}}
             </h4>
         </div>
         <div collapse="isCollapsed">
-            <div class="panel-body">{{list.sponsor.first_name}} {{list.sponsor.last_name}}
-                <a ng-href="{{list.urls.congress}}">More info, click here</a>
+            <div class="panel-body">Sponsor Name: {{list.sponsor.first_name}} {{list.sponsor.last_name}}
+                <br><a ng-href="{{list.urls.congress}}">For more info, click here</a>
             </div>
         </div>
     </div>
