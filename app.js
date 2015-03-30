@@ -25,6 +25,13 @@ angular.module('hearmenow', [
 
         }).
 
+        when("/representative", {
+
+            templateUrl: "views/rep-view.html",
+            controller: "repController"
+
+        }).
+
         otherwise({redirectTo: "/home"});
 
 }]);

@@ -1,6 +1,8 @@
 //Services
 
-angular.module('hearmenow.service', []).factory('sunLight', function($http){
+angular.module('hearmenow.service', []).
+
+    factory('sunLight', function($http){
 
     var sunLight = {};
 
@@ -13,11 +15,11 @@ angular.module('hearmenow.service', []).factory('sunLight', function($http){
 
         });
 
-    }
+    };
 
     return sunLight;
 
-}).
+    }).
 
     factory('govTrackUs', function($http){
 
@@ -32,18 +34,18 @@ angular.module('hearmenow.service', []).factory('sunLight', function($http){
 
             });
 
-        }
+        };
 
-        bills.getSenator = function(){
+        bills.getRep = function(){
 
             return $http({
 
                 method: 'JSONP',
-                url: 'https://www.govtrack.us/api/v2/person'
+                url: 'https://www.govtrack.us/api/v2/person?format=jsonp&callback=JSON_CALLBACK'
 
             });
 
-        }
+        };
 
         return bills;
 

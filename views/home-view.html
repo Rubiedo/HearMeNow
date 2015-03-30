@@ -1,34 +1,28 @@
-<div class="row home-view">
-    <div class="panel panel-default" ng-repeat="list in sunlightList">
-        <div class="panel-heading">
-            <h4 class="panel-title" ng-click="isCollapsed = !isCollapsed">
-                    Title: {{list.official_title}}
-            </h4>
-        </div>
-        <div collapse="isCollapsed">
-            <div class="panel-body">Sponsor Name: {{list.sponsor.first_name}} {{list.sponsor.last_name}}
-                <br><a ng-href="{{list.urls.congress}}">For more info, click here</a>
-            </div>
-        </div>
+<h1 class="page-header">
+    Dashboard
+</h1>
+
+<div class="row placeholders">
+    <div class="col-xs-6 col-sm-3 placeholder text-center">
+        <img src="//placehold.it/200/6666ff/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+        <h4>Label</h4>
+        <span class="text-muted">Something else</span>
     </div>
-
-
-
-
-<!--    <table class="table table-striped">
-        <thead>
-        <tr><th colspan="4">Bills</th></tr>
-        </thead>
-        <tbody ng-repeat="list in sunlightList">
-
-        <tr ng-click="click(list)">
-            <td colspan="4">{{list.official_title}}</td>
-        </tr>
-        <tr class="bill-info" ng-show="list.showInfo">
-            <td colspan="2">{{list.sponsor.first_name}} {{list.sponsor.last_name}}</td>
-            <td colspan="2"><a ng-href="{{list.urls.congress}}">More info, click here</a></td>
-        </tr>
-        </tbody>
-    </table> -->
-
+    <div class="col-xs-6 col-sm-3 placeholder text-center">
+        <img src="//placehold.it/200/66ff66/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+        <h4>Label</h4>
+        <span class="text-muted">Something else</span>
+    </div>
+    <div class="col-xs-6 col-sm-3 placeholder text-center">
+        <img src="//placehold.it/200/6666ff/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+        <h4>Label</h4>
+        <span class="text-muted">Something else</span>
+    </div>
+    <div class="col-xs-6 col-sm-3 placeholder text-center">
+        <img src="//placehold.it/200/66ff66/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+        <h4>Label</h4>
+        <span class="text-muted">Something else</span>
+    </div>
 </div>
+
+<hr>

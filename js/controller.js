@@ -34,8 +34,36 @@ angular.module('hearmenow.controller', []).
 
             return list.showInfo = ! list.showInfo;
 
-        }
+        };
 
         $scope.isCollapsed = true;
+
+    }).
+
+    controller('repController', function($scope, govTrackUs){
+
+        $scope.repList = [];
+
+        govTrackUs.getRep().success(function(response){
+
+           $scope.repList = response.objects;
+
+        });
+
+        $scope.click = function(list){
+
+            return list.showInfo = ! list.showInfo;
+
+        };
+
+        $scope.isCollapsed = true;
+
+    }).
+
+    controller('mainController', function($scope, $location){
+
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
 
     });

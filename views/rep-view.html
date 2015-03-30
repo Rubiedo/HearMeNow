@@ -1,0 +1,15 @@
+
+<table class="table table-striped">
+
+    <tbody ng-repeat="rep in repList">
+
+    <tr ng-click="click(rep)">
+        <td colspan="4">{{rep.firstname}} {{rep.lastname}}</td>
+    </tr>
+    <tr class="bill-info" ng-show="rep.showInfo">
+        <td colspan="2">{{rep.link}}</td>
+        <td colspan="2"><a ng-href="{{list.urls.congress}}">More info, click here</a></td>
+    </tr>
+    </tbody>
+</table>
+</div>
