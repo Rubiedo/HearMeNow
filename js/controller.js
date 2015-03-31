@@ -43,6 +43,9 @@ angular.module('hearmenow.controller', []).
     controller('repController', function($scope, govTrackUs){
 
         $scope.repList = [];
+        $scope.usersPerPage = 10; // this should match however many results your API puts on one page
+        $scope.totalReps = 0;
+        getResultsPage(1);
 
         govTrackUs.getRep().success(function(response){
 
@@ -57,6 +60,33 @@ angular.module('hearmenow.controller', []).
         };
 
         $scope.isCollapsed = true;
+
+        $scope.pagination = {
+            current: 1
+        };
+
+        $scope.pageChanged = function(newPage) {
+            getResultsPage(newPage);
+        };
+
+        function getResultsPage(pageNumber) {
+            // this is just an example, in reality this stuff should be in a service
+            /*$http.get('https://www.govtrack.us/api/v2/person?format=jsonp&callback=JSON_CALLBACK&limit=10&offset=' + pageNumber)
+                .then(function(result) {
+                    $$scope.repList = result.objects;
+                });*/
+
+            var correctPageNumber = pageNumber - 1;
+
+            govTrackUs.getRep(correctPageNumber).success(function(response){
+
+                $scope.repList = response.objects;
+
+                $scope.totalReps = (response.meta.total_count)/20;
+
+            });
+
+        }
 
     }).
 

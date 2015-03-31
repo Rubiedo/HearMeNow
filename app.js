@@ -6,6 +6,7 @@ angular.module('hearmenow', [
     'hearmenow.controller',
     'ngRoute',
     'ui.bootstrap',
+    'angularUtils.directives.dirPagination'
 
 ]).config(['$routeProvider', function($routeProvider){
 
@@ -32,6 +33,17 @@ angular.module('hearmenow', [
 
         }).
 
+        when("/export", {
+
+        templateUrl: "views/second-view.html",
+        controller: "homeController"
+
+    }).
+
         otherwise({redirectTo: "/home"});
 
-}]);
+    }]).config(function(paginationTemplateProvider) {
+
+        paginationTemplateProvider.setPath('bower_components/angular-utils-pagination/dirPagination.tpl.html');
+
+    });
