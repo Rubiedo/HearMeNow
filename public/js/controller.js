@@ -96,4 +96,32 @@ angular.module('hearmenow.controller', []).
             return viewLocation === $location.path();
         };
 
-    });
+    }).
+    //User Controller (login, logout)
+    controller('loginController', [$scope, $location, $window, 'UserService', 'AuthenticationService',
+        function loginController($scope, $location, $window, UserService, AuthenticationService){
+
+            $scope.logIn = function logIn(username, password){
+
+                if(username !== undefined && password !== undefined){
+                    UserService.success(function(data){
+                        AuthenticationService.isLogged = true;
+                        $window.sessionStorage.token = data.token;
+                        $location.path("/admin");
+                    }).error(function(status, data){
+                        console.log(status);
+                        console.log(data);
+                    });
+                }
+            }
+
+            $scope.logOut = function logOut(){
+                if(AuthenticationService.isLogged){
+                    AuthenticationService.isLogged = false;
+                    delete $window.sessionStorage.token;
+                    $location.path("/");
+                }
+            }
+        }
+
+]);
