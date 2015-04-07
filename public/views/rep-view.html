@@ -7,7 +7,7 @@
                 </h1>
             </tr>
         </thead>
-        <tbody dir-paginate="rep in repList | itemsPerPage: 20" total-items="totalReps">
+        <tbody dir-paginate="rep in repList | itemsPerPage: 10" total-items="totalReps">
 
         <tr ng-click="click(rep)">
             <td colspan="4">{{rep.firstname}} {{rep.lastname}}</td>
