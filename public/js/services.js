@@ -6,14 +6,15 @@ angular.module('hearmenow.service', []).
 
     var sunLight = {};
 
+
+
     sunLight.getInfo = function(){
 
-        return $http({
+        return $http(
 
-            method: 'JSONP',
-            url: 'https://congress.api.sunlightfoundation.com/bills/search?apikey=e48aa7cf09864232a1620c1a084dbe8c&&callback=JSON_CALLBACK'
+            $http.get('https://congress.api.sunlightfoundation.com/bills/search?apikey=e48aa7cf09864232a1620c1a084dbe8c&&callback=JSON_CALLBACK')
 
-        });
+        );
 
     };
 

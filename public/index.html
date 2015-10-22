@@ -2,6 +2,9 @@
 <html ng-app="hearmenow">
 <head lang="en">
     <meta charset="UTF-8">
+    <!-- Setting the right viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     <title></title>
 
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -25,12 +28,13 @@
                 </button>
                 <a class="navbar-brand" href="#">Hear Me Now</a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" ng-controller="LoginCtrl">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#/home">Dashboard</a></li>
                     <li><a href="#">Settings</a></li>
                     <li><a href="#">Profile</a></li>
-                    <li><a href="#">Login</a></li>
+                    <li ng-click="loginButton(isUserLoggedIn)"><a href="#/home" type="submit" ng-click="login()" ng-show="isUserLoggedIn">Login</a></li>
+                    <li ng-click="loginButton(isUserLoggedIn)"><a href="#/home" type="submit" ng-click="logout()"  ng-show="!isUserLoggedIn" value="logout">Logout</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
                     <input type="text" class="form-control" placeholder="Search...">
@@ -62,7 +66,7 @@
                 </p>
 
 
-                <ng-view></ng-view><!-- ng-view -->
+                <ng-view ng-cloak></ng-view><!-- ng-view -->
 
             </div><!--/row-->
         </div>

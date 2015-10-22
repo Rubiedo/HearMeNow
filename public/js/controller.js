@@ -96,4 +96,32 @@ angular.module('hearmenow.controller', []).
             return viewLocation === $location.path();
         };
 
+    }).
+
+    controller('LoginCtrl', function LoginCtrl($scope, auth, store, $location) {
+        $scope.login = function() {
+            auth.signin({}, function(profile, token) {
+                // Success callback
+                store.set('profile', profile);
+                store.set('token', token);
+                $location.path('/');
+            }, function(err) {
+                console.log(err);
+            });
+        }
+
+        $scope.logout = function() {
+            auth.signout();
+            store.remove('profile');
+            store.remove('token');
+        }
+
+        $scope.isUserLoggedIn = true;
+
+        $scope.loginButton = function(isUserLoggedIn){
+
+            return $scope.isUserLoggedIn = ! $scope.isUserLoggedIn;
+
+        }
+
     });
